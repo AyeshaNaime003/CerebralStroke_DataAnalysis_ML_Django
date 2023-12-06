@@ -3,4 +3,13 @@ virtualenv env
 PS E:\Documents\CerebralStroke_DataAnalysis_ML_Django> env/scripts/activate
 (env) PS E:\Documents\CerebralStroke_DataAnalysis_ML_Django> deactivate
 pip install django
+
 make project: django-admin startproject cerebral_stroke ./
+
+make app: django-admin startapp base
+
+need to tell project about base: base.apps.BaseConfig
+
+need to add the cerebral_stroke/tmeplates to the templates of settings.py
+
+
