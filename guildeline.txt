@@ -12,4 +12,15 @@ need to tell project about base: base.apps.BaseConfig
 
 need to add the cerebral_stroke/tmeplates to the templates of settings.py
 
+main pages fo the project:
+login, 
+intro to cerebral stoke
+check risk->form page
+powerbi
+
+main models:
+users(AbstractUser): username, email, password, 
+predictions: user(User object, many to one reation), 
+gender(male or female only), age(integer), height(float), weight(float), smoking_status(never, formerly, smokes), risk(0 or 1)
+register models to admin
 
