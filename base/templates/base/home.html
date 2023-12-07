@@ -1,5 +1,89 @@
 {% extends 'main.html '%}
 {% block content %}
-<h1>homePage</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    p {
+        color: #666;
+    }
+    .cta-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .cta-column {
+        flex-basis: 48%; /* Adjust as needed */
+    }
+
+    .cta-link {
+        display: block;
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .cta-link:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<header>
+    <h1>Cerebral Stroke Awareness</h1>
+</header>
+
+<section id="introduction">
+    <h2>Introduction to Cerebral Stroke</h2>
+    <p>
+        Cerebral stroke, also known as a brain attack, occurs when there is a disruption of blood flow to the brain.
+        This can lead to serious consequences and requires prompt medical attention.
+    </p>
+</section>
+
+<section id="consequences">
+    <h2>Consequences on the Body</h2>
+    <p>
+        A cerebral stroke can have profound effects on various aspects of the body, including motor functions,
+        speech, and cognitive abilities. It may result in paralysis, difficulty speaking, and memory issues.
+        Rehabilitation is often necessary to regain lost functions.
+    </p>
+</section>
+
+<section id="constant-monitoring">
+    <h2>Constant Monitoring for Susceptibility</h2>
+    <p>
+        It is crucial to constantly monitor the risk factors and living conditions that may contribute to the
+        susceptibility of cerebral stroke. Factors such as high blood pressure, smoking, and a sedentary lifestyle
+        can increase the risk. Regular check-ups and a healthy lifestyle play a vital role in prevention.
+    </p>
+</section>
+<div class="cta-container">
+    <div class="cta-column">
+        <a href="{% url 'predict' %}" class="cta-link">Take the Form</a>
+    </div>
+    <div class="cta-column">
+        <a href="{% url 'analysis' %}" class="cta-link">Explore Data Analytics</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2023 Cerebral Stroke Awareness</p>
+</footer>
 {% endblock %}
 
