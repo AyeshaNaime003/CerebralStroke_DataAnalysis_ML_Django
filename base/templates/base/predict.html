@@ -2,12 +2,44 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <div class="prediction-form-container">
-        <h2>Make a Prediction</h2>
-        <form method="post" enctype="multipart/form-data" class="prediction-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+<div class="container prediction-container">
+    <h2 class="my-2 mb-4">Prediction Form</h2>
+    <form method="post"action="">
+        {% csrf_token %}
+        
+        <div class="mb-3 d-flex flex-row">
+            <label for="gender" class="form-label">Gender:</label>
+            <select class="form-select" name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        
+        <div class="mb-3 d-flex flex-row">
+            <label for="age" class="form-label w-40">Age:</label>
+            <input type="number" class="form-control w-25" name="age" id="age" required>
+        </div>
+        
+        <div class="mb-3 d-flex flex-row">
+            <label for="height" class="form-label w-40">Height in m:</label>
+            <input type="number" step="0.01" min="0" class="form-control w-25" name="height" id="height" required>
+        </div>
+        
+        <div class="mb-3 d-flex flex-row">
+            <label for="weight" class="form-label w-40">Weight in kg:</label>
+            <input type="text" class="form-control w-25" name="weight" id="weight" required>
+        </div>
+        
+        <div class="mb-3 d-flex flex-row">
+            <label for="smoking_status" class="form-label w-40">Smoking Status:</label>
+            <select class="form-select" name="smoking_status" id="smoking_status">
+                <option value="never">Never Smoked</option>
+                <option value="formerly">Formerly Smoked</option>
+                <option value="smokes">Currently Smokes</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 {% endblock %}

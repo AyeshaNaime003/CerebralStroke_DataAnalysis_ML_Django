@@ -1,34 +1,9 @@
-body{
-    background-color: aquamarine;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
 }
-.prediction-form-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.prediction-form label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.prediction-form input[type="text"],
-.prediction-form input[type="number"],
-.prediction-form select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-}
-
-.prediction-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.prediction-container .d-flex label{
+    /* text-align: right; */
+    width: 10%;
 }
