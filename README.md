@@ -140,4 +140,4 @@ pip install django
 
 ## Author
 
-Ayesha Naime
+Ayesha Naime And Fatima Hussain
