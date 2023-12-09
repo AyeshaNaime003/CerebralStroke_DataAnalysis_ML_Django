@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
+from .models import Prediction
+from django.contrib import messages
 import os
 import joblib
 import numpy as np
@@ -24,10 +26,10 @@ def predict(request):
         smoking_status = smoking_statuses[request.POST.get('smoking_status')]
         ever_married = 1 if request.POST.get('ever_married') == "yes" else 0
         work_type_mapping = {
-            'Govt_job': 0,
-            'Never_worked': 1,
-            'Private': 2,
-            'Self-employed': 3,
+            'govt_job': 0,
+            'never_worked': 1,
+            'private': 2,
+            'self-employed': 3,
             'children': 4,
         }
         work_type = work_type_mapping.get(request.POST.get('work_type'), None)
@@ -36,7 +38,6 @@ def predict(request):
         hypertension = 1 if request.POST.get('hypertension') == "yes" else 0
         avg_glucose_lvl = float(request.POST.get('avg-glucose-lvl'))
         bmi = weight/height**2
-        
         # standardizing
         loaded_scaler = joblib.load(os.path.join(base_dir,"base","scaler_model.joblib"))
         mean_values = loaded_scaler.mean_
@@ -60,6 +61,21 @@ def predict(request):
         
         rf_smote = joblib.load(os.path.join(base_dir,"base","rf_smote.joblib"))
         result = rf_smote.predict([data_array])[0]
+        # create prediction obeject
+        prediction = Prediction(
+            gender=request.POST.get('gender'),
+            age=request.POST.get('age'),
+            bmi=bmi,
+            work_type=request.POST.get('work_type'),
+            smoking_status=request.POST.get('smoking_status'),
+            avg_glucose_lvl=request.POST.get('avg-glucose-lvl'),
+            heartdisease=request.POST.get('heartdisease'),
+            hypertension=request.POST.get('hypertension'),
+            risk=result
+        )
+        prediction.save()
+        messages.success(request, 'Prediction saved successfully!')
+
     return render(request, "base/predict.html", {"result":result})
 
 # Create your views here.
