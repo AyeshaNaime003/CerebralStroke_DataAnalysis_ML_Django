@@ -1,19 +1,25 @@
 {% extends 'main.html '%}
+
 {% block title %}Home{% endblock title %}
+
 {% block content %}
-<header class="mt-3 mb-5">
-    <h1>Cerebral Stroke Awareness</h1>
-</header>
+{% load static %}
+<div class="container col-xxl-8 my-0 mx-4">
+    <div class="row flex-lg-row-reverse align-items-center">
+        <div class="col-12 col-md-4">
+            <img src="{% static 'assets/stroke.jpg' %}" class="d-block mx-lg-auto img-fluid" alt="stroke" >
+        </div>
+        <div class="col-lg-8">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Cerebral Stroke Awareness</h1>
+            <p class="lead">
+                Cerebral stroke, also known as a brain attack, occurs when there is a disruption of blood flow to the
+                brain. This can lead to serious consequences and requires prompt medical attention.
+            </p>
+        </div>
+    </div>
+</div>
 
-<section id="introduction" class="my-4">
-    <h2>Introduction to Cerebral Stroke</h2>
-    <p>
-        Cerebral stroke, also known as a brain attack, occurs when there is a disruption of blood flow to the brain.
-        This can lead to serious consequences and requires prompt medical attention.
-    </p>
-</section>
-
-<section id="consequences" class="my-4">
+<section class="container my-4">
     <h2>Consequences on the Body</h2>
     <p>
         A cerebral stroke can have profound effects on various aspects of the body, including motor functions,
@@ -22,7 +28,7 @@
     </p>
 </section>
 
-<section id="constant-monitoring" class="my-4">
+<section class="container my-4">
     <h2>Constant Monitoring for Susceptibility</h2>
     <p>
         It is crucial to constantly monitor the risk factors and living conditions that may contribute to the
@@ -30,18 +36,18 @@
         can increase the risk. Regular check-ups and a healthy lifestyle play a vital role in prevention.
     </p>
 </section>
-<div class="container-fluid" class="my-4">
-   <div class="row">
+<div class="container" class="my-4">
+    <h4>Try our services</h4>
+    <div class="row py-3">
         <div class="col">
             <a href="{% url 'predict' %}" class="btn btn-primary btn-block">Take the Form</a>
         </div>
         <div class="col">
             <a href="{% url 'analysis' %}" class="btn btn-primary btn-block">Explore Data Analytics</a>
         </div>
-   </div>
+    </div>
 </div>
 <footer class="mt-3">
     <p>&copy; 2023 Cerebral Stroke Awareness</p>
 </footer>
-{% endblock %}
-
+{% endblock content %}
