@@ -1,7 +1,3 @@
-Sure, here's a basic README.md for your Cerebral Stroke Analysis project:
-
----
-
 # Cerebral Stroke Analysis Project
 
 ## Introduction
@@ -144,8 +140,4 @@ pip install django
 
 ## Author
 
-Your Name
-
----
-
-Feel free to customize this README according to the specific details of your project.
+Ayesha Naime And Fatima Hussain
