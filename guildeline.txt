@@ -24,8 +24,17 @@ predictions: user(User object, many to one reation),
 gender(male or female only), age(integer), height(float), weight(float), smoking_status(never, formerly, smokes), risk(0 or 1)
 register models to admin
 
-app
-project: templates/main.html
-static: styles/main.css
- 
+styles:
+created static dir:
+    app
+    project: templates/main.html
+    static: styles/main.css
+changed settings:   'django.template.context_processors.static'  STATICFILES_DIRS = [ 
+    BASE_DIR / "static"]
+load static in main.html and link the css file using static {% static 'styles/main.css' %}
+linked bootstrap
+
+prediction:
+submit form, get data from post, transformation of data(), model inference, prediction, display results and then store in predictions with the user name
+
 

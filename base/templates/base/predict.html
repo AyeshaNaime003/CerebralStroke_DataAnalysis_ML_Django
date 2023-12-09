@@ -2,44 +2,137 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<div class="container prediction-container">
+<div class="container-fluid prediction-container">
     <h2 class="my-2 mb-4">Prediction Form</h2>
-    <form method="post"action="">
+    <form method="post" action="">
         {% csrf_token %}
-        
-        <div class="mb-3 d-flex flex-row">
-            <label for="gender" class="form-label">Gender:</label>
-            <select class="form-select" name="gender" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+        <h4 class="mb-3">Bio Data</h4>
+        <!-- gender -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Gender:</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="gender" value="male"> Male
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="gender" value="female"> Female
+            </label>
         </div>
-        
-        <div class="mb-3 d-flex flex-row">
-            <label for="age" class="form-label w-40">Age:</label>
-            <input type="number" class="form-control w-25" name="age" id="age" required>
+        <!-- age -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label w-40">Age:</label>
+            <input type="number" class="form-control w-25" name="age" required>
         </div>
-        
-        <div class="mb-3 d-flex flex-row">
-            <label for="height" class="form-label w-40">Height in m:</label>
-            <input type="number" step="0.01" min="0" class="form-control w-25" name="height" id="height" required>
+        <!-- height -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label w-40">Height in m:</label>
+            <input type="number" step="0.01" min="0" class="form-control w-25" name="height" required>
         </div>
-        
-        <div class="mb-3 d-flex flex-row">
-            <label for="weight" class="form-label w-40">Weight in kg:</label>
-            <input type="text" class="form-control w-25" name="weight" id="weight" required>
+        <!-- weight -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label w-40">Weight in kg:</label>
+            <input type="text" class="form-control w-25" name="weight" required>
         </div>
-        
-        <div class="mb-3 d-flex flex-row">
-            <label for="smoking_status" class="form-label w-40">Smoking Status:</label>
-            <select class="form-select" name="smoking_status" id="smoking_status">
-                <option value="never">Never Smoked</option>
-                <option value="formerly">Formerly Smoked</option>
-                <option value="smokes">Currently Smokes</option>
-            </select>
+        <h4 class="mb-3">Living Conditions: </h4>
+        <!-- smoking status -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Smoking Status:</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="smoking_status" value="never">Never Smoked
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="smoking_status" value="formerly">Smoked Formerly
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="smoking_status" value="smokes">Currently Smokes
+            </label>
         </div>
-        
+        <!-- Marital status -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Marital Status:</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="ever_married" value="yes">Yes
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="ever_married" value="no"> No
+            </label>
+        </div>
+        <!-- work_type -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Work Type:</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="work_type" value="children">Children
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="work_type" value="Private">Private
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="work_type" value="Never_worked">Never Worked
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="work_type" value="Self-employed">Self-Employed
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="work_type" value="Govt_job">Govt Job
+            </label>
+        </div>
+        <!-- Residence_type -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Residence Type:</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="residence_type" value="rural">Rural
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="residence_type" value="urban">Urban
+            </label>
+        </div>
+        <h4 class="mb-3">Health conditions</h4>
+        <!-- average glucose level -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label w-40">Average Blood Glucose level:</label>
+            <input type="number" class="form-control w-25" name="avg-glucose-lvl" required>
+        </div>
+        <!-- heart disease -->
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Any Heart Disease?</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="heart-disease" value="yes">Yes
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="heart-disease" value="no">No
+            </label>
+        </div>
+        <div class="my-2 d-flex flex-row flex-wrap">
+            <label class="form-label">Hypertension</label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="hypertension" value="yes">Yes
+            </label>
+            <label class="btn btn-outline-primary mx-1" style="width: 150px">
+                <input type="radio" name="hypertension" value="no">No
+            </label>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        {% if result != None %}
+        {% if result == 1 %}
+        <div class="btn btn-danger">You are susceptible to Cerebral Stroke</div>
+        <div class="mt-4">
+            <h3>Healthy Lifestyle Tips</h3>
+            <ul>
+                <li>Include fruits and vegetables in your daily diet.</li>
+                <li>Engage in regular physical activity, such as walking or jogging.</li>
+                <li>Maintain a healthy weight through a balanced diet and exercise.</li>
+                <li>Avoid excessive alcohol consumption.</li>
+                <li>Quit smoking or avoid exposure to secondhand smoke.</li>
+                <li>Monitor and manage stress through relaxation techniques.</li>
+                <li>Keep blood pressure and cholesterol levels in check.</li>
+                <li>Stay hydrated by drinking an adequate amount of water.</li>
+                <li>Get sufficient quality sleep each night.</li>
+            </ul>
+        </div>
+
+        {% else %}
+        <div class="btn btn-success">You are not susceptible to Cerebral Stroke</div>
+        {% endif %}
+        {% endif %}
     </form>
 </div>
 {% endblock %}

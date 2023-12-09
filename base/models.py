@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Prediction(models.Model):
     # Foreign Key relationship with the User model
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='predictions')
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='predictions')
 
     # Fields for predictions
     GENDER_CHOICES = [ ('male', 'Male'),
