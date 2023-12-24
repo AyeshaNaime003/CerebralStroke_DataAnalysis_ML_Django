@@ -2,7 +2,7 @@
 {% extends 'main.html' %}
 {% block title %}Predict{% endblock title %}
 {% block content %}
-<div class="container-fluid prediction-container">
+<div class="container prediction-container">
     <h2 class="my-2 mb-4">Prediction Form</h2>
     <form method="post" action="">
         {% csrf_token %}
@@ -88,7 +88,7 @@
         <h4 class="mb-3">Health conditions</h4>
         <!-- average glucose level -->
         <div class="my-2 d-flex flex-row flex-wrap">
-            <label class="form-label w-40">Average Blood Glucose level:</label>
+            <label class="form-label w-40">Average Blood Glucose level: </label>
             <input type="number" class="form-control w-25" name="avg-glucose-lvl" required>
         </div>
         <!-- heart disease -->
