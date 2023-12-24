@@ -98,13 +98,11 @@ pip install django
 
 ### Main Pages
 
-1. **Login:** Implement a login page for user authentication.
+1. **Introduction to Cerebral Stroke:** Provide information about cerebral stroke.
 
-2. **Introduction to Cerebral Stroke:** Provide information about cerebral stroke.
+2. **Check Risk (Form Page):** Create a page with a form for users to input relevant information.
 
-3. **Check Risk (Form Page):** Create a page with a form for users to input relevant information.
-
-4. **Power BI:** Integrate Power BI for data visualization.
+3. **Power BI:** Integrate Power BI for data visualization.
 
 ### Main Models
 
