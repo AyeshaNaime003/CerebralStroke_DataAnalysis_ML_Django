@@ -1,5 +1,7 @@
 # Cerebral Stroke Analysis Project
 
+![Home page](./assets/home.png)
+
 ## Introduction
 
 This project aims to analyze and predict the risk of cerebral stroke based on various input parameters. The project utilizes Django for the web framework, incorporates data visualization with Power BI, and employs machine learning for risk prediction.
