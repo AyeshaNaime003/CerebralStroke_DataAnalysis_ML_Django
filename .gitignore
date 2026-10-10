@@ -1,1 +1,4 @@
-env
+venv
+base/__pycache__
+cerebral_stroke/__pycache__
+db.sqlite3
